@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require('http');
 const mongoose = require('mongoose');
 
@@ -9,7 +10,7 @@ const server = http.createServer(app);
 
 const PORT = process.env.PORT || 5000;
 
-const MONGO_URL='mongodb+srv://sadwicked:DreamS*26@cluster0.qxa5v.mongodb.net/nasa?retryWrites=true&w=majority'
+const MONGO_URL = process.env.MONGO_URI;
 
 mongoose.connection.once('open', ()=>{
   console.log('MongoDB connection ready!');

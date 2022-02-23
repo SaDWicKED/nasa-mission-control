@@ -6,13 +6,15 @@
   "scripts": {
     "start": "node src/server.js",
     "watch": "nodemon src/server.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "test-watch": "jest --watch",
     "cluster": "pm2 start src/server.js -i max"
   },
   "author": "Silvio Sol",
   "license": "MIT",
-  "jest": {},
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.0.4",
